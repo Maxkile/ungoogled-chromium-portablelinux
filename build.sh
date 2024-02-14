@@ -36,6 +36,8 @@ cd "${src_dir}"
 patch -Np1 -i ${patches_dir}/use-oauth2-client-switches-as-default.patch
 # Fix build with ICU 74 (taken from ungoogled-chromium-archlinux repo)
 patch -Np1 -i  ${patches_dir}/icu-74.patch
+# Increate per-tab memory limit
+patch -Np1 -i  ${patches_dir}/increase-node-mem-limit-4096.patch
 
 # combine local and ungoogled-chromium gn flags
 cat "${main_repo}/flags.gn" "${root_dir}/flags.gn" >"${src_dir}/out/Default/args.gn"
